@@ -1,0 +1,121 @@
+@charset "UTF-8";
+body {
+	line-height: 2;
+}
+.container {
+	height: 100%;
+	width: 100%;
+	margin-left:0px;
+	margin-top:0px;
+	padding-left: 0px;
+}
+.row {
+	margin-left: 48px;
+	width: 100%;
+}
+.headbar {
+	background-color: white;
+	position: fixed;
+	border-bottom: 1px solid #F3F3F3;
+	z-index: 1002;
+}
+.logobar {
+	left: -40px;
+	top: 20px;
+	position: relative;
+	float: left;
+}
+.toolbar {
+	top: 10px;
+	line-height: 48px;
+}
+.systembar {
+	top: 10px;
+	line-height: 48px;
+}
+.outline {
+	position: fixed; 
+	width: 240px; 
+	padding-top: 20px;
+}
+.part {
+	padding-top: 8px;
+	font-size: 16px;
+	line-height: 20px;
+}
+.part::before {
+	position: absolute;
+	left: -26px;
+	content: "";
+	width: 20px;
+	height: 20px;
+	border-radius: 50%;
+	background-color: #E954AF;
+	text-align: center;
+	color: white;
+}
+.capter {
+	left: 6px;
+	font-size: 14px;
+	line-height: 18px;
+	padding-top: 4px;
+}
+.capter::before {
+	position: absolute;
+	left: -30px;
+	content: "";
+	width: 18px;
+	height: 18px;
+	border-radius: 50%;
+	background-color: #bc0e8f;
+	text-align: center;
+	color: white;
+}
+.section {
+	left: 8px;
+	font-size: 12px;
+	line-height: 16px;
+	padding-top: 4px;
+}
+.section::before {
+	position: absolute;
+	left: -37px;
+	content: "";
+	width: 16px;
+	height: 16px;
+	border-radius: 50%;
+	/* border: 1px solid black; */
+	background-color: red;
+	text-align: center;
+	color: white;
+}
+.workframe {
+	left: 242px;
+	padding: 80px 40px 40px 40px;
+}
+.workframe::before {
+    content: "";
+    width: 19px;
+    height: 365px;
+    position: absolute;
+    left: -19px;
+    top: 0;
+    background: url(../images/shadow.png);
+}
+.paper {
+	height: 60em;
+	width: 60em;
+	resize: none;
+	border: 0px;
+	font-size: 14px;
+	letter-spacing: 1px;
+	background: -webkit-linear-gradient(top, transparent 26px, black 28px);
+	background-size: 100% 28px;
+	line-height: 28px;
+}
+.footbar {
+	padding-top: 12px;
+	z-index: 1000;
+	text-align: center;
+	border-top: 1px solid #F3F3F3;
+}
