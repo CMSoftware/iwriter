@@ -1,6 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" 
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"
 	buffer="none" session="false" trimDirectiveWhitespaces="true" %>
-<!--%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %-->
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,17 +8,14 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
 	<!-- 引入 Bootstrap -->
-	<link href="utils/bootstrap-3.3.0/css/bootstrap.min.css" rel="stylesheet">
-
-	<!-- 引入 dojo -->
-	<!--
-		<script src="utils/dojo-1.12.1/dojo.js" data-dojo-config="async:true"></script>
-	-->
-	<script src="//ajax.googleapis.com/ajax/libs/dojo/1.10.4/dojo/dojo.js" data-dojo-config="async:true"></script>
-	
-
+	<link rel="stylesheet" href="utils/bootstrap-3.3.0/css/bootstrap.min.css">
 	<!-- 页面样式 -->
-	<link href="styles/mainpage-style.css" rel="stylesheet">
+	<link rel="stylesheet" href="styles/mainpage-style.css">
+	<link rel="stylesheet" href="utils/dojo-1.12.1/dijit/themes/claro/claro.css">
+	<!-- 引入 dojo -->
+	<script type="text/javascript" charset="utf-8" src="utils/dojo-1.12.1/dojo/dojo.js" data-dojo-config="async:true"></script>
+	<!-- 页面函数 -->
+	<script type="text/javascript" charset="utf-8" src="javascripts/mainmenu.js"></script>
 </head>
 <body>
 	<div style="float: left; position: fixed; width: 48px; height: 100%; background-color: #202020; z-index:1000;"></div>
@@ -27,40 +23,30 @@
 		<div class="row clearfix headbar">
 			<div class="col-md-1 column logobar">
 				<img id="MainMenu" alt="logo" src="images/logo.jpeg" class="img-circle" width="48px" height="48px"/>
-	<script>
-	require([
-		"dijit/Menu",
-		"dijit/MenuItem",
-		"dijit/CheckedMenuItem",
-		"dijit/MenuSeparator",
-		"dijit/PopupMenuItem",
-		"dojo/domReady!"
-	], function (Menu, MenuItem, CheckedMenuItem, MenuSeparator, PopupMenuItem) {
-		var pMenu;
-		pMenu = new Menu({targetNodeIds: ["MainMenu"]});
-		pMenu.addChild(new MenuItem({label: "Simple menu item"}));
-		pMenu.addChild(new MenuItem({label: "Disabled menu item", disabled: true}));
-		pMenu.addChild(new MenuItem({
-			label: "Menu Item With an icon",
-			iconClass: "dijitEditorIcon dijitEditorIconCut",
-			onClick: function () {
-				alert('i was clicked')
-			}
-		}));
-		pMenu.addChild(new CheckedMenuItem({label: "checkable menu item"}));
-		pMenu.addChild(new MenuSeparator());
-
-		var pSubMenu = new Menu();
-		pSubMenu.addChild(new MenuItem({label: "Submenu item"}));
-		pSubMenu.addChild(new MenuItem({label: "Submenu item"}));
-		pMenu.addChild(new PopupMenuItem({label: "Submenu", popup: pSubMenu}));
-
-		pMenu.startup();
-	});
-	</script>
 			</div>
 			<div class="col-md-9 column toolbar">
-				工具栏
+				<script>
+					require(["dojo/parser", "dijit/Toolbar", "dijit/form/Button", "dijit/form/ToggleButton", "dijit/ToolbarSeparator"]);
+				</script>
+				<div id="toolbar1" data-dojo-type="dijit/Toolbar">
+					<div data-dojo-type="dijit/form/Button" id="toolbar1.new"
+				        data-dojo-props="iconClass:'dijitEditorIcon dijitEditorIconCut', showLabel:false">新建</div>
+					<div data-dojo-type="dijit/form/Button" id="toolbar1.open"
+				        data-dojo-props="iconClass:'dijitEditorIcon dijitEditorIconCopy', showLabel:false">打开</div>
+					<div data-dojo-type="dijit/form/Button" id="toolbar1.store"
+				        data-dojo-props="iconClass:'dijitEditorIcon dijitEditorIconPaste', showLabel:false">存储</div>
+					<div data-dojo-type="dijit/form/Button" id="toolbar1.close"
+								data-dojo-props="iconClass:'dijitEditorIcon dijitEditorIconPaste', showLabel:false">关闭</div>
+					<div data-dojo-type="dijit/form/Button" id="toolbar1.preview"
+								data-dojo-props="iconClass:'dijitEditorIcon dijitEditorIconPaste', showLabel:false">预览</div>
+					<div data-dojo-type="dijit/form/Button" id="toolbar1.export"
+							  data-dojo-props="iconClass:'dijitEditorIcon dijitEditorIconPaste', showLabel:false">导出</div>
+						<!-- The following adds a line between toolbar sections -->
+					<span data-dojo-type="dijit/ToolbarSeparator"></span>
+					<div data-dojo-type="dijit/form/ToggleButton" id="toolbar1.figure" data-dojo-props="iconClass:'dijitEditorIcon dijitEditorIconBold', showLabel:false">图</div>
+					<div data-dojo-type="dijit/form/ToggleButton" id="toolbar1.table" data-dojo-props="iconClass:'dijitEditorIcon dijitEditorIconBold', showLabel:false">表格</div>
+					<div data-dojo-type="dijit/form/ToggleButton" id="toolbar1.define" data-dojo-props="iconClass:'dijitEditorIcon dijitEditorIconBold', showLabel:false">定义</div>
+				</div>
 			</div>
 			<div class="col-md-2 column systembar">
 				登录
