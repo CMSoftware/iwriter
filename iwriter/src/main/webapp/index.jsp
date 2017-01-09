@@ -13,9 +13,9 @@
 	<link rel="stylesheet" href="styles/mainpage-style.css">
 	<link rel="stylesheet" href="utils/dojo-1.12.1/dijit/themes/claro/claro.css">
 	<!-- 引入 dojo -->
-	<script type="text/javascript" charset="utf-8" src="utils/dojo-1.12.1/dojo/dojo.js" data-dojo-config="async:true"></script>
+	<script type="text/javascript" charset="utf-8" src="utils/dojo-1.12.1/dojo/dojo.js" data-dojo-config="async:true, parseOnLoad: true"></script>
 	<!-- 页面函数 -->
-	<script type="text/javascript" charset="utf-8" src="javascripts/mainmenu.js"></script>
+	<script type="text/javascript" charset="utf-8" src="javascript/mainmenu.js"></script>
 </head>
 <body>
 	<div style="float: left; position: fixed; width: 48px; height: 100%; background-color: #202020; z-index:1000;"></div>
@@ -29,23 +29,23 @@
 					require(["dojo/parser", "dijit/Toolbar", "dijit/form/Button", "dijit/form/ToggleButton", "dijit/ToolbarSeparator"]);
 				</script>
 				<div id="toolbar1" data-dojo-type="dijit/Toolbar">
-					<div data-dojo-type="dijit/form/Button" id="toolbar1.new"
-				        data-dojo-props="iconClass:'dijitEditorIcon dijitEditorIconCut', showLabel:false">新建</div>
+					<div data-dojo-type="dijit/form/Button" id="toolbar1.cut"
+				        data-dojo-props="iconClass:'dijitEditorIcon dijitEditorIconCut noborder', showLabel:false">新建</div>
 					<div data-dojo-type="dijit/form/Button" id="toolbar1.open"
-				        data-dojo-props="iconClass:'dijitEditorIcon dijitEditorIconCopy', showLabel:false">打开</div>
+				        data-dojo-props="iconClass:'dijitEditorIcon dijitEditorIconCopy noborder', showLabel:false">打开</div>
 					<div data-dojo-type="dijit/form/Button" id="toolbar1.store"
-				        data-dojo-props="iconClass:'dijitEditorIcon dijitEditorIconPaste', showLabel:false">存储</div>
+				        data-dojo-props="iconClass:'dijitEditorIcon dijitEditorIconPaste noborder', showLabel:false">存储</div>
 					<div data-dojo-type="dijit/form/Button" id="toolbar1.close"
-								data-dojo-props="iconClass:'dijitEditorIcon dijitEditorIconPaste', showLabel:false">关闭</div>
+								data-dojo-props="iconClass:'dijitEditorIcon dijitEditorIconPaste noborder', showLabel:false">关闭</div>
 					<div data-dojo-type="dijit/form/Button" id="toolbar1.preview"
-								data-dojo-props="iconClass:'dijitEditorIcon dijitEditorIconPaste', showLabel:false">预览</div>
+								data-dojo-props="iconClass:'dijitEditorIcon dijitEditorIconPaste noborder', showLabel:false">预览</div>
 					<div data-dojo-type="dijit/form/Button" id="toolbar1.export"
-							  data-dojo-props="iconClass:'dijitEditorIcon dijitEditorIconPaste', showLabel:false">导出</div>
+							  data-dojo-props="iconClass:'dijitEditorIcon dijitEditorIconPaste noborder', showLabel:false">导出</div>
 						<!-- The following adds a line between toolbar sections -->
 					<span data-dojo-type="dijit/ToolbarSeparator"></span>
-					<div data-dojo-type="dijit/form/ToggleButton" id="toolbar1.figure" data-dojo-props="iconClass:'dijitEditorIcon dijitEditorIconBold', showLabel:false">图</div>
-					<div data-dojo-type="dijit/form/ToggleButton" id="toolbar1.table" data-dojo-props="iconClass:'dijitEditorIcon dijitEditorIconBold', showLabel:false">表格</div>
-					<div data-dojo-type="dijit/form/ToggleButton" id="toolbar1.define" data-dojo-props="iconClass:'dijitEditorIcon dijitEditorIconBold', showLabel:false">定义</div>
+					<div data-dojo-type="dijit/form/ToggleButton" id="toolbar1.figure" data-dojo-props="iconClass:'dijitEditorIcon dijitEditorIconBold noborder', showLabel:false">图</div>
+					<div data-dojo-type="dijit/form/ToggleButton" id="toolbar1.table" data-dojo-props="iconClass:'dijitEditorIcon dijitEditorIconBold noborder', showLabel:false">表格</div>
+					<div data-dojo-type="dijit/form/ToggleButton" id="toolbar1.define" data-dojo-props="iconClass:'dijitEditorIcon dijitEditorIconBold noborder', showLabel:false">定义</div>
 				</div>
 			</div>
 			<div class="col-md-2 column systembar">

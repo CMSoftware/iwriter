@@ -27,15 +27,18 @@ body {
 }
 .toolbar {
 	top: 10px;
-	line-height: 48px;
+	line-height: 36px;
+}
+.noborder {
+	border: none;
 }
 .systembar {
 	top: 10px;
 	line-height: 48px;
 }
 .outline {
-	position: fixed; 
-	width: 240px; 
+	position: fixed;
+	width: 240px;
 	padding-top: 20px;
 }
 .part {
