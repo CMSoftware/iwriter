@@ -86,9 +86,9 @@
 				</ul>
 			</div>
 			<div class="col-md-10 column workframe">
-				<textarea rows="60" class="paper">
-					国内外研究现状dddddddd ddddddd国内外研究现状 dddddd
-				</textarea>
+				<div class="paper" contenteditable="true">
+					<p>国内外研究现状dddddddd ddddddd国内外研究现状 dddddd</p>
+				</div>
 			</div>
 		</div>
 		<div class="row footbar">
