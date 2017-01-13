@@ -114,7 +114,11 @@ body {
 	letter-spacing: 1px;
 	background: -webkit-linear-gradient(top, transparent 26px, black 28px);
 	background-size: 100% 28px;
-	line-height: 28px;
+	line-height: 30px !important;
+}
+.paper p {
+	text-align: justify;
+	margin-top: 30px;
 }
 .footbar {
 	padding-top: 12px;
