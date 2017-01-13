@@ -112,8 +112,8 @@ body {
 	border: 0px;
 	font-size: 14px;
 	letter-spacing: 1px;
-	background: -webkit-linear-gradient(top, transparent 26px, black 28px);
-	background-size: 100% 28px;
+	background: -webkit-linear-gradient(top, transparent 29px, black 32px);
+	background-size: 100% 30px;
 	line-height: 30px !important;
 }
 .paper p {
