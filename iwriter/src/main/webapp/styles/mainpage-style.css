@@ -106,20 +106,24 @@ body {
     background: url(../images/shadow.png);
 }
 .paper {
-	height: 60em;
-	width: 60em;
+	height: 62.5em;
+	width: 72em;
 	resize: none;
-	border: 0px;
 	font-size: 14px;
 	letter-spacing: 1px;
 	background: -webkit-linear-gradient(top, transparent 29px, black 32px);
 	background-size: 100% 30px;
 	line-height: 30px !important;
+	border-top: 2px solid rgba(45, 124, 206, 0.5);
+	border-bottom: 2px solid rgba(45, 124, 206, 0.5);
+	padding-top: 16px;
+	top: -12px;
+	position: relative;
 }
 .paper p {
-	text-indent:2em;
+	text-indent: 2em;
 	text-align: justify;
-	margin-top: 30px;
+	margin: -10px 0 10px 0;
 }
 .footbar {
 	padding-top: 12px;
