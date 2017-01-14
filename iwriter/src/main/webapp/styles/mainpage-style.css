@@ -116,9 +116,8 @@ body {
 	line-height: 30px !important;
 	border-top: 2px solid rgba(45, 124, 206, 0.5);
 	border-bottom: 2px solid rgba(45, 124, 206, 0.5);
-	padding-top: 16px;
-	top: -12px;
-	position: relative;
+	padding-top: 10px;
+	overflow: hidden;
 }
 .paper p {
 	text-indent: 2em;
