@@ -16,6 +16,20 @@
 	<script type="text/javascript" charset="utf-8" src="utils/dojo-1.12.1/dojo/dojo.js" data-dojo-config="async:true, parseOnLoad: true"></script>
 	<!-- 页面函数 -->
 	<script type="text/javascript" charset="utf-8" src="javascript/mainmenu.js"></script>
+	<style>
+	.dijitButtonNode {
+		border-top: 1px solid rgba(161, 161, 161, 0.5);
+		border-left: 1px solid rgba(161, 161, 161, 0.5);
+		border-right: 2px solid rgba(0, 0, 0, 0.5);
+		border-bottom: 2px solid rgba(0, 0, 0, 0.5);
+	}
+	.dijitButtonActiveFocused {
+		border-top: 2px solid rgba(0, 0, 0, 0.5);
+		border-left: 2px solid rgba(0, 0, 0, 0.5);
+		border-right: 1px solid rgba(161, 161, 161, 0.5);
+		border-bottom: 1px solid rgba(161, 161, 161, 0.5);
+	}
+	</style>
 </head>
 <body>
 	<div style="float: left; position: fixed; width: 48px; height: 100%; background-color: #202020; z-index:1000;"></div>
@@ -97,5 +111,17 @@
 			</div>
 		</div>
 	</div>
+	<script>
+	require(["dojo/on", "dojo/dom", "dojo/query", "dojo/domReady!"], function(on, dom) {
+		var myObject = {
+			id: "myObject",
+			onMouseDown: function(evt){
+				alert(this.childNodes[0].id);
+			}
+		};
+		var div = dom.byId("toolbar1");
+		on(div, ".dijitButtonNode:click", myObject.onMouseDown);
+	});
+	</script>
 </body>
 </html>
