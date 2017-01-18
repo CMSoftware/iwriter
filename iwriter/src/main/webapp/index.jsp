@@ -17,18 +17,25 @@
 	<!-- 页面函数 -->
 	<script type="text/javascript" charset="utf-8" src="javascript/mainmenu.js"></script>
 	<style>
-	.dijitButtonNode {
-		border-top: 1px solid rgba(161, 161, 161, 0.5);
-		border-left: 1px solid rgba(161, 161, 161, 0.5);
-		border-right: 2px solid rgba(0, 0, 0, 0.5);
-		border-bottom: 2px solid rgba(0, 0, 0, 0.5);
-	}
-	.dijitButtonActiveFocused {
-		border-top: 2px solid rgba(0, 0, 0, 0.5);
-		border-left: 2px solid rgba(0, 0, 0, 0.5);
-		border-right: 1px solid rgba(161, 161, 161, 0.5);
-		border-bottom: 1px solid rgba(161, 161, 161, 0.5);
-	}
+	 .claro .dijitToolbar {
+		 border: 0;
+		 background: white;
+		 padding: 0;
+		 margin: 0;
+	 }
+	 .dijitMenuTable {
+		 border: 1px solid #DDDDDD;
+		 background-color: #EEEEEE;
+		 width: 128px;
+		 top: -16px;
+		 left: 25px;
+		 position: relative;
+		 box-shadow: 8px 8px 4px #AAAAAA;
+		 visibility: hidden;
+	 }
+	 .dijitMenuTable .dijitMenuItemIconCell {
+		 width: 20px;
+	 }
 	</style>
 </head>
 <body>
@@ -37,29 +44,61 @@
 		<div class="row clearfix headbar">
 			<div class="col-md-1 column logobar">
 				<img id="MainMenu" alt="logo" src="images/logo.jpeg" class="img-circle" width="48px" height="48px"/>
-			</div>
-			<div class="col-md-9 column toolbar">
+				<script>
+					require(["dojo/parser",
+									 "dijit/DropDownMenu",
+									 "dijit/MenuItem",
+									 "dijit/MenuSeparator",
+									 "dijit/PopupMenuItem"]);
+				</script>
+				<div data-dojo-type="dijit/DropDownMenu" id="startMenu">
+    			<div data-dojo-type="dijit/MenuItem"
+							 data-dojo-props="iconClass:'dijitEditorIcon dijitEditorIconCut' ">
+							 新建
+					</div>
+    			<div data-dojo-type="dijit/MenuItem"
+						data-dojo-props="iconClass:'dijitEditorIcon dijitEditorIconCopy' ">
+						打开
+				  </div>
+					<div data-dojo-type="dijit/MenuItem"
+						data-dojo-props="iconClass:'dijitEditorIcon dijitEditorIconCopy' ">
+						保存
+				  </div>
+    	 		<div data-dojo-type="dijit/MenuItem" data-dojo-props="iconClass:'dijitEditorIcon dijitEditorIconPaste' ">导出</div>
+          <div data-dojo-type="dijit/MenuSeparator"></div>
+          <div data-dojo-type="dijit/PopupMenuItem">
+          	<span>Action</span>
+        			<div data-dojo-type="dijit/DropDownMenu" id="submenu2">
+            	<div data-dojo-type="dijit/MenuItem" >Nested #1</div>
+            	<div data-dojo-type="dijit/MenuItem" >Nested #2</div>
+            </div>
+          </div>
+      </div>
+		 </div>
+		 <div class="col-md-9 column toolbar claro">
 				<script>
 					require(["dojo/parser", "dijit/Toolbar", "dijit/form/Button", "dijit/form/ToggleButton", "dijit/ToolbarSeparator"]);
 				</script>
 				<div id="toolbar1" data-dojo-type="dijit/Toolbar">
 					<div data-dojo-type="dijit/form/Button" id="toolbar1.cut"
-				        data-dojo-props="iconClass:'dijitEditorIcon dijitEditorIconCut noborder', showLabel:false">新建</div>
+				        data-dojo-props="iconClass:'dijitEditorIcon dijitEditorIconCut', showLabel:false, onClick:function(evt) {
+
+								}">新建</div>
 					<div data-dojo-type="dijit/form/Button" id="toolbar1.open"
-				        data-dojo-props="iconClass:'dijitEditorIcon dijitEditorIconCopy noborder', showLabel:false">打开</div>
+				        data-dojo-props="iconClass:'dijitEditorIcon dijitEditorIconCopy', showLabel:false">打开</div>
 					<div data-dojo-type="dijit/form/Button" id="toolbar1.store"
-				        data-dojo-props="iconClass:'dijitEditorIcon dijitEditorIconPaste noborder', showLabel:false">存储</div>
+				        data-dojo-props="iconClass:'dijitEditorIcon dijitEditorIconPaste', showLabel:false">保存</div>
 					<div data-dojo-type="dijit/form/Button" id="toolbar1.close"
-								data-dojo-props="iconClass:'dijitEditorIcon dijitEditorIconPaste noborder', showLabel:false">关闭</div>
+								data-dojo-props="iconClass:'dijitEditorIcon dijitEditorIconPaste', showLabel:false">关闭</div>
 					<div data-dojo-type="dijit/form/Button" id="toolbar1.preview"
-								data-dojo-props="iconClass:'dijitEditorIcon dijitEditorIconPaste noborder', showLabel:false">预览</div>
+								data-dojo-props="iconClass:'dijitEditorIcon dijitEditorIconPaste', showLabel:false">预览</div>
 					<div data-dojo-type="dijit/form/Button" id="toolbar1.export"
-							  data-dojo-props="iconClass:'dijitEditorIcon dijitEditorIconPaste noborder', showLabel:false">导出</div>
+							  data-dojo-props="iconClass:'dijitEditorIcon dijitEditorIconPaste', showLabel:false">导出</div>
 						<!-- The following adds a line between toolbar sections -->
 					<span data-dojo-type="dijit/ToolbarSeparator"></span>
-					<div data-dojo-type="dijit/form/ToggleButton" id="toolbar1.figure" data-dojo-props="iconClass:'dijitEditorIcon dijitEditorIconBold noborder', showLabel:false">图</div>
-					<div data-dojo-type="dijit/form/ToggleButton" id="toolbar1.table" data-dojo-props="iconClass:'dijitEditorIcon dijitEditorIconBold noborder', showLabel:false">表格</div>
-					<div data-dojo-type="dijit/form/ToggleButton" id="toolbar1.define" data-dojo-props="iconClass:'dijitEditorIcon dijitEditorIconBold noborder', showLabel:false">定义</div>
+					<div data-dojo-type="dijit/form/ToggleButton" id="toolbar1.figure" data-dojo-props="iconClass:'dijitEditorIcon dijitEditorIconBold', showLabel:false">图</div>
+					<div data-dojo-type="dijit/form/ToggleButton" id="toolbar1.table" data-dojo-props="iconClass:'dijitEditorIcon dijitEditorIconBold', showLabel:false">表格</div>
+					<div data-dojo-type="dijit/form/ToggleButton" id="toolbar1.define" data-dojo-props="iconClass:'dijitEditorIcon dijitEditorIconBold', showLabel:false">定义</div>
 				</div>
 			</div>
 			<div class="col-md-2 column systembar">
@@ -112,15 +151,14 @@
 		</div>
 	</div>
 	<script>
-	require(["dojo/on", "dojo/dom", "dojo/query", "dojo/domReady!"], function(on, dom) {
-		var myObject = {
-			id: "myObject",
-			onMouseDown: function(evt){
-				alert(this.childNodes[0].id);
-			}
-		};
-		var div = dom.byId("toolbar1");
-		on(div, ".dijitButtonNode:click", myObject.onMouseDown);
+	require(["dojo/on", "dojo/dom", "dojo/query", "dojo/ready", "dijit/registry"],
+	function(on, dom, query, ready, registry) {
+		ready(function() {
+			tlProcessor.dom = dom;
+			query(".dijitMenuItem").on("click", tlProcessor.doTask);
+			on(dom.byId("toolbar1"), ".dijitButton:click", tlProcessor.onClick);
+			on(dom.byId("MainMenu"), "click", tlProcessor.ShowMenu);
+		});
 	});
 	</script>
 </body>
