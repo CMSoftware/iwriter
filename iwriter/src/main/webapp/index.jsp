@@ -151,15 +151,36 @@
 		</div>
 	</div>
 	<script>
-	require(["dojo/on", "dojo/dom", "dojo/query", "dojo/ready", "dijit/registry"],
-	function(on, dom, query, ready, registry) {
-		ready(function() {
-			tlProcessor.dom = dom;
-			query(".dijitMenuItem").on("click", tlProcessor.doTask);
-			on(dom.byId("toolbar1"), ".dijitButton:click", tlProcessor.onClick);
-			on(dom.byId("MainMenu"), "click", tlProcessor.ShowMenu);
+		require([ "dojo/on", "dojo/dom", "dojo/query", "dojo/ready",
+				"dijit/registry" ], function(on, dom, query, ready, registry) {
+			var tlProcessor = {
+				id : "tbProcessor",
+				dom : NULL,
+				OnButtonClick : function(evt) {
+					alert(this.innerHTML);
+				},
+				ShowMenu : function() {
+					dom.byId("startMenu").style.visibility = "visible";
+				},
+				HiddenMenu : function() {
+					dom.byId("startMenu").style.visibility = "hidden";
+				},
+				OnMenuItemClick : function(evt) {
+					var curItem = evt.target.parentNode;
+					if (!dojo.hasClass(curItem, "dijitPopupMenuItem")) {
+						HiddenMenu();
+					}
+				}
+			}
+
+			ready(function() {
+				tlProcessor.dom = dom;
+				query(".dijitMenuItem").on("click", tlProcessor.doTask);
+				on(dom.byId("toolbar1"), ".dijitButton:click",
+						tlProcessor.onClick);
+				on(dom.byId("MainMenu"), "click", tlProcessor.ShowMenu);
+			});
 		});
-	});
 	</script>
 </body>
 </html>
