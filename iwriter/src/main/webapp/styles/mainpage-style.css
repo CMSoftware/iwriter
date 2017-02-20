@@ -17,7 +17,7 @@ body {
 	background-color: white;
 	position: fixed;
 	border-bottom: 1px solid #F3F3F3;
-	z-index: 1002;
+	z-index: 1000;
 	height: 48px;
 }
 .logobar {
@@ -40,7 +40,8 @@ body {
 .outline {
 	position: fixed;
 	width: 240px;
-	padding-top: 20px;
+	padding-top: 48px;
+	left: 32px;
 }
 .part {
 	padding-top: 8px;
